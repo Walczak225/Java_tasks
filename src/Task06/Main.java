@@ -20,7 +20,7 @@ public class Main {
             a += 2 * multiple;
             copyN -=10;
         }else {
-            a += 1* multiple;
+            a += 1 * multiple;
         }
         copyN /=10;
         multiple *=10;
