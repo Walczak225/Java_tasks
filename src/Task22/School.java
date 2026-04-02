@@ -42,5 +42,19 @@ public class School {
         int toIndex = Math.min(fromIndex + pageSize, allStudents.size());
         return allStudents.subList(fromIndex, toIndex);
     }
+    public void removeStudent(Student student) {
+        List<Teacher> teachersCopy = new ArrayList<>(student.getTeachers());
+        for (Teacher teacher : teachersCopy) {
+            student.removeTeacher(teacher);
+        }
+        allStudents.remove(student);
+    }
+    public void removeTeacher(Teacher teacher) {
+        List<Student> studentsCopy = new ArrayList<>(teacher.getStudents());
+        for (Student student : studentsCopy) {
+            teacher.removeStudent(student);
+        }
+        allTeachers.remove(teacher);
+    }
 
 }
